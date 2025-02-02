@@ -1,6 +1,4 @@
-
 // productService.js - Serviço de Catálogo de Produtos
-// Responsável por gerenciar os produtos disponíveis no sistema.
 class ProductService {
     constructor() {
         // Lista de produtos disponíveis
@@ -18,7 +16,11 @@ class ProductService {
     // Verifica se há estoque suficiente para um determinado produto
     checkStock(productId, quantity) {
         const product = this.products.find(p => p.id === productId);
-        return product && product.stock >= quantity;
+        if (!product) {
+            console.log(`❌ Produto com ID ${productId} não encontrado.`);
+            return false;
+        }
+        return product.stock >= quantity;
     }
 }
 

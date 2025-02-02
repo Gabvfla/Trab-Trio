@@ -1,9 +1,12 @@
-
 // paymentService.js - Serviço de Pagamentos
-// Responsável por processar pagamentos e alterar o status dos pedidos.
 class PaymentService {
     // Método para processar pagamento de um pedido
     processPayment(order, paymentMethod) {
+        if (!order || !paymentMethod) {
+            console.log("❌ Dados inválidos para processar o pagamento.");
+            return false;
+        }
+
         // Simulação de sucesso no pagamento (80% de chance de sucesso)
         if (paymentMethod === "cartao" && Math.random() > 0.2) {
             order.status = "pago";

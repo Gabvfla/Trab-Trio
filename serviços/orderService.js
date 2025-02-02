@@ -1,6 +1,4 @@
-
 // orderService.js - Serviço de Pedidos
-// Responsável por criar e gerenciar pedidos.
 class OrderService {
     constructor() {
         this.orders = [];
@@ -8,6 +6,11 @@ class OrderService {
 
     // Cria um pedido associado a um usuário e calcula o total da compra
     createOrder(username, items, productService) {
+        if (!username || !items || items.length === 0) {
+            console.log("❌ Dados inválidos para criar o pedido.");
+            return null;
+        }
+
         // Verifica se os produtos possuem estoque suficiente
         for (const item of items) {
             if (!productService.checkStock(item.id, 1)) {

@@ -1,5 +1,4 @@
 // main.js - Simulação do sistema
-// Importa os serviços necessários
 const AuthService = require("./services/authService");
 const ProductService = require("./services/productService");
 const OrderService = require("./services/orderService");
