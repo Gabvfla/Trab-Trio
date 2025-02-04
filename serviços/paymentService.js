@@ -1,13 +1,14 @@
-// paymentService.js - Serviço de Pagamentos
+// paymentService.js - classe para serviço de pagamentos
 class PaymentService {
-    // Método para processar pagamento de um pedido
+
+    //método para processar o pagamento de um pedido
     processPayment(order, paymentMethod) {
         if (!order || !paymentMethod) {
             console.log("❌ Dados inválidos para processar o pagamento.");
-            return false;
+            return false; //falso para caso hajam dados faltantes
         }
 
-        // Simulação de sucesso no pagamento (80% de chance de sucesso)
+        //simulação de sucesso no pagamento (80% de chance de sucesso)
         if (paymentMethod === "cartao" && Math.random() > 0.2) {
             order.status = "pago";
             console.log(`✅ Pedido ${order.id} pago com sucesso!`);
