@@ -28,3 +28,10 @@ if (authService.login(username, password)) {
         paymentService.processPayment(order, "cartao");
     }
 }
+
+/*
+grupo do projeto:
+- Celso Lopes
+- Gabriel Victor Tavares
+- Leila Minello Silva
+*/
